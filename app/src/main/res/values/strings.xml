@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">理財應用工具</string>
+
+    <string name="TextView1">理財應用工具</string>
+
+
+
+    <string name="app_a2">收支管理</string>
+<!--    <string name="app_a2_2">帳本</string>-->
+    <string name="app_a3">查詢</string>
+    <string name="app_a4">管理金融帳戶</string>
+    <string name="app_a5">理財建議</string>
+
+</resources>

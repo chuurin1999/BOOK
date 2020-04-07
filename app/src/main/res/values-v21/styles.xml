@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="at1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#8C8886</item>
+        <item name="colorPrimaryDark">#AEA8A8</item>
+        <item name="colorAccent">#8C8886</item>
+        <item name="android:navigationBarColor">#353232</item>
+    </style>
+
+    <style name="at2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">#88AA00</item>
+        <item name="colorPrimary">#37988F</item>
+        <item name="colorPrimaryDark">#35AA9F</item>
+        <item name="android:navigationBarColor">#263326</item>
+    </style>
+
+<!--    <style name="at2_2" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        <item name="colorControlNormal">@android:color/darker_gray</item>-->
+<!--        <item name="colorControlActivated">#E8ECD8</item>-->
+<!--        <item name="colorPrimary">#FF9800</item>-->
+<!--        <item name="colorPrimaryDark">#35AA9F</item>-->
+<!--        <item name="android:navigationBarColor">#3B4C3B</item>-->
+<!--    </style>-->
+
+    <style name="at3" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">#D87093</item>
+        <item name="colorPrimary">#D87093</item>
+        <item name="colorPrimaryDark">	#FFC0CB</item>
+        <item name="android:navigationBarColor">#320A17</item>
+    </style>
+
+    <style name="at4" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">#04A1C6</item>
+        <item name="colorPrimary">#6495ED</item>
+        <item name="colorPrimaryDark">#749FEC</item>
+        <item name="android:navigationBarColor">#172337</item>
+    </style>
+
+    <style name="at5" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">#686E70</item>
+        <item name="colorPrimary">#54575A</item>
+        <item name="colorPrimaryDark">#707175</item>
+        <item name="android:navigationBarColor">#000000</item>
+    </style>
+</resources>

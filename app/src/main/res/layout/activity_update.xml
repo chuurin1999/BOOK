@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main_2_home">
+
+    <TextView
+        android:id="@+id/date_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="日期"
+        app:layout_constraintEnd_toEndOf="@+id/date_input2"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="@+id/date_input2"
+        app:layout_constraintTop_toTopOf="@+id/date_input2" />
+
+    <Button
+        android:id="@+id/date_input2"
+        android:layout_width="363dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="?attr/colorControlHighlight"
+        android:drawableRight="@drawable/date"
+        android:hint="點選日期"
+        android:onClick="showDatePickerDialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009"
+        tools:ignore="OnClick" />
+
+
+    <TextView
+        android:id="@+id/money_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NT$"
+        app:layout_constraintBottom_toTopOf="@+id/money_input2"
+        app:layout_constraintEnd_toStartOf="@+id/caption_title"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/money_input2"
+        android:layout_width="166dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="輸入金額"
+        android:inputType="numberDecimal"
+        android:maxLength="7"
+        android:singleLine="true"
+        android:theme="@style/at2"
+        app:layout_constraintStart_toStartOf="@+id/date_input2"
+        app:layout_constraintTop_toBottomOf="@+id/date_input2" />
+
+    <TextView
+        android:id="@+id/caption_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="61dp"
+        android:text="摘要"
+        app:layout_constraintBottom_toBottomOf="@+id/caption_input2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/caption_input2" />
+
+    <EditText
+        android:id="@+id/caption_input2"
+        android:layout_width="188dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="輸入摘要"
+        android:inputType="textPersonName"
+        android:theme="@style/at2"
+        app:layout_constraintEnd_toEndOf="@+id/date_input2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/money_input2"
+        app:layout_constraintTop_toBottomOf="@+id/date_input2" />
+
+    <Spinner
+        android:id="@+id/type"
+        android:layout_width="164dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/note_input2"
+        app:layout_constraintEnd_toStartOf="@+id/type2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/money_input2"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <Spinner
+        android:id="@+id/type2"
+        android:layout_width="183dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/type"
+        app:layout_constraintTop_toBottomOf="@+id/caption_input2" />
+    <TextView
+        android:id="@+id/note_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="備註"
+        app:layout_constraintBottom_toTopOf="@+id/note_input2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent" />
+    <EditText
+        android:id="@+id/note_input2"
+        android:layout_width="367dp"
+        android:layout_height="171dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="248dp"
+        android:contentDescription="輸入備註"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="輸入備註"
+        android:inputType="textMultiLine"
+        android:theme="@style/at2"
+        app:layout_constraintEnd_toEndOf="@+id/date_input2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_input2" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="112dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="12dp"
+        android:background="#5F9EA0"
+        android:text="Update"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/note_input2" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="112dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="#87CECB"
+        android:text="Delete"
+        android:textAllCaps="false"
+        android:textColor="#F44336"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/note_input2"
+        app:layout_constraintTop_toBottomOf="@+id/note_input2" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

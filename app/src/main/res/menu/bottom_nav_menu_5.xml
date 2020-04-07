@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/main_5_home"
+        android:icon="@drawable/good"
+        android:title="理財建議" />
+    <item
+        android:id="@+id/main_5_dash"
+        android:icon="@drawable/pay"
+        android:title="支付" />
+</menu>

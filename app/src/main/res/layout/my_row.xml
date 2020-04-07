@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mainLayout">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/money_title_txt"
+                android:layout_width="87dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="24dp"
+                android:textSize="20sp"
+                android:text="金額"
+                app:layout_constraintStart_toEndOf="@+id/caption_title_txt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/type2_title_txt"
+                android:layout_width="101dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="54dp"
+                android:layout_marginLeft="54dp"
+                android:layout_marginTop="2dp"
+                android:textSize="20sp"
+                android:text="詳細狀態"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/note_title_txt"
+                android:layout_width="101dp"
+                android:layout_height="42dp"
+                android:textSize="20sp"
+                android:text="備註"
+                app:layout_constraintEnd_toEndOf="@+id/type2_title_txt"
+                app:layout_constraintStart_toStartOf="@+id/type2_title_txt"
+                app:layout_constraintTop_toBottomOf="@+id/type2_title_txt" />
+
+            <TextView
+                android:id="@+id/caption_title_txt"
+                android:layout_width="108dp"
+                android:layout_height="34dp"
+                android:textSize="20sp"
+                android:text="摘要"
+                app:layout_constraintStart_toEndOf="@+id/type2_title_txt"
+                app:layout_constraintTop_toTopOf="@+id/type2_title_txt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

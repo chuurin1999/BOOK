@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main_4_1_1">
+
+
+    <Spinner
+        android:id="@+id/type3"
+        android:layout_width="334dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="40dp"
+        android:radius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="334dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="92dp"
+        android:ems="10"
+        android:hint="輸入銀行帳號"
+        android:inputType="textPersonName"
+        android:theme="@style/at4"
+        app:layout_constraintEnd_toEndOf="@+id/type3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/type3"
+        app:layout_constraintTop_toBottomOf="@+id/type3" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="334dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="輸入網銀帳號"
+        android:inputType="textPassword"
+        android:theme="@style/at4"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="334dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="輸入網銀密碼"
+        android:theme="@style/at4"
+        app:layout_constraintEnd_toEndOf="@+id/editText5"
+        app:layout_constraintStart_toStartOf="@+id/editText5"
+        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="334dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        android:background="	#003377"
+        android:text="連線授權"
+        android:textColor="#DDDDDD"
+
+        app:layout_constraintEnd_toEndOf="@+id/editText6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editText6"
+        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

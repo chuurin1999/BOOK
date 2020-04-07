@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_5"
+    app:startDestination="@id/main_5_home">
+
+    <fragment
+        android:id="@+id/main_5_home"
+        android:name="com.example.application.Main_5_home"
+        android:label="activity_5_home"
+        tools:layout="@layout/activity_5_home" />
+    <fragment
+        android:id="@+id/main_5_dash"
+        android:name="com.example.application.Main_5_dash"
+        android:label="activity_5_dash"
+        tools:layout="@layout/activity_5_dash" />
+</navigation>
