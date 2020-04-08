@@ -34,14 +34,12 @@ public class UpdateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
-
         date_input = findViewById(R.id.date_input2);
         money_input = findViewById(R.id.money_input2);
         caption_input = findViewById(R.id.caption_input2);
         note_input = findViewById(R.id.note_input2);
         update_button = findViewById(R.id.update_button);
         delete_button = findViewById(R.id.delete_button);
-
         context =this;
         //程式剛啟始時載入第一個下拉選單
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, type);

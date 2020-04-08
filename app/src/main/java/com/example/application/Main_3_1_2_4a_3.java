@@ -78,10 +78,10 @@ public class Main_3_1_2_4a_3 extends AppCompatActivity {
         }else{
             while (cursor.moveToNext()){
                 book_id.add(cursor.getString(0));
-                book_spinner2.add(cursor.getString(1));
-                book_note.add(cursor.getString(2));
+                book_spinner2.add(cursor.getString(5));
+                book_note.add(cursor.getString(6));
                 book_caption.add(cursor.getString(3));
-                book_money.add(cursor.getString(4));
+                book_money.add(cursor.getString(2));
             }
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);

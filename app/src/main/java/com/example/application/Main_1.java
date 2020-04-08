@@ -53,7 +53,7 @@ public class Main_1 extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 //Intent是一种运行时绑定（run-time binding）机制，它能在程序运行过程中连接两个不同的组件。在存放资源代码的文件夹下下，
-                Intent i = new Intent(Main_1.this , Main_4.class);
+                Intent i = new Intent(Main_1.this , Main_5.class);
                 //启动
                 startActivity(i);
             }
