@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 public class UpdateActivity extends AppCompatActivity {
     EditText money_input, caption_input, note_input;
@@ -145,4 +146,14 @@ public class UpdateActivity extends AppCompatActivity {
 
         }
     };
+    public void showDatePickerDialog(View v)
+    {
+        DialogFragment newFragment = new DatePickerFragment();
+        Bundle bData = new Bundle();
+        bData.putInt("view", v.getId());
+        Button button = (Button) v;
+        bData.putString("date", button.getText().toString());
+        newFragment.setArguments(bData);
+        newFragment.show(getSupportFragmentManager(), "日期挑選器");
+    }
 }

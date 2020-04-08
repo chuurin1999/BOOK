@@ -15,13 +15,13 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="36dp"
         android:background="#DDDDDD"
-        android:drawableRight="@drawable/date"
+        android:drawableRight="@drawable/calendar"
         android:hint="點選日期"
         android:onClick="showDatePickerDialog"
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/date" />
+        app:srcCompat="@drawable/calendar" />
 
     <Button
         android:id="@+id/button5"
@@ -43,7 +43,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="48dp"
         android:background="#FFE4E1"
-        android:drawableRight="@drawable/date"
+        android:drawableRight="@drawable/calendar"
         android:hint="點選日期"
         android:onClick="showDatePickerDialog"
         app:layout_constraintStart_toStartOf="@+id/button9"
@@ -57,7 +57,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:background="#FFE4E1"
-        android:drawableRight="@drawable/date"
+        android:drawableRight="@drawable/calendar"
         android:hint="點選日期"
         android:onClick="showDatePickerDialog"
         android:text=""

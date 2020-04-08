@@ -28,7 +28,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:background="?attr/colorControlHighlight"
-        android:drawableRight="@drawable/date"
+        android:drawableRight="@drawable/calendar"
         android:hint="點選日期"
         android:onClick="showDatePickerDialog"
         app:layout_constraintBottom_toBottomOf="parent"

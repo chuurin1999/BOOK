@@ -22,7 +22,6 @@ import androidx.fragment.app.Fragment;
 public class Main_2_home extends Fragment {
     EditText money_input, caption_input, note_input;
     Button add_button,clear_button,date_input;
-    //<-----------------------
     private String[] type = new String[] {"收入", "支出"};
     private String[] tea = new String[]{"薪資收入","獎金收入","投資收入","兼職收入","零用金"};
     private String[][] type2 = new String[][]{{"薪資收入","獎金收入","投資收入","兼職收入","零用金"},{"飲食支出","交通支出","娛樂支出","醫療支出","生活支出","衣著支出","教育支出"}};
@@ -31,10 +30,8 @@ public class Main_2_home extends Fragment {
     private Context context;
     ArrayAdapter<String> adapter ;
     ArrayAdapter<String> adapter2;
-    //--------------------->
     public Main_2_home() {
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_2_home, container, false);
@@ -46,7 +43,6 @@ public class Main_2_home extends Fragment {
         add_button = view.findViewById(R.id.add_button);
         clear_button.setOnClickListener(clear_button_onClick);
         add_button.setOnClickListener(add_button_onClick);
-        //從這-----------------------------------------------------------------------------------------------
         context = getContext();
         //程式剛啟始時載入第一個下拉選單
         adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, type);
@@ -59,8 +55,6 @@ public class Main_2_home extends Fragment {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp2 = (Spinner) view.findViewById(R.id.type2);
         sp2.setAdapter(adapter2);
-        //-----------------------------------------------------------------------------------------------------到這
-
         return view;
     }
     private final View.OnClickListener add_button_onClick = new View.OnClickListener(){
@@ -74,6 +68,8 @@ public class Main_2_home extends Fragment {
                     sp.getSelectedItem().toString().trim(),
                     sp2.getSelectedItem().toString().trim(),
                     note_input.getText().toString().trim());
+            Intent myIntent = new Intent(getActivity(), Main_3_1_2_4a_3.class);
+            startActivity(myIntent);//启动
         }
     };
     private final View.OnClickListener clear_button_onClick = new View.OnClickListener(){
