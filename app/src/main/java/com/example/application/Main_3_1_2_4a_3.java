@@ -8,22 +8,16 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-//<<
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class Main_3_1_2_4a_3 extends AppCompatActivity {
@@ -32,12 +26,11 @@ public class Main_3_1_2_4a_3 extends AppCompatActivity {
     ImageView empty_imageview;
     TextView no_data;
     MyDBHelper myDB;
-    ArrayList<String> book_id, book_spinner2, book_note, book_caption,book_money;
+    ArrayList<String> book_id, book_date, book_money, book_caption,book_spinner1,book_spinner2, book_note;
     CustomAdapter customAdapter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3_1_2_4a_3);
-
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.add_button);
         empty_imageview = findViewById(R.id.empty_imageview);
@@ -45,21 +38,22 @@ public class Main_3_1_2_4a_3 extends AppCompatActivity {
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main_3_1_2_4a_3.this, Main_2_home.class);
+                Intent intent = new Intent(Main_3_1_2_4a_3.this, Main_2.class);
                 startActivity(intent);
             }
         });
 
         myDB = new MyDBHelper(Main_3_1_2_4a_3.this);
         book_id = new ArrayList<>();
+        book_date = new ArrayList<>();
+        book_money = new ArrayList<>();
+        book_caption = new ArrayList<>();
+        book_spinner1 =new ArrayList<>();
         book_spinner2 = new ArrayList<>();
         book_note = new ArrayList<>();
-        book_caption = new ArrayList<>();
-        book_money = new ArrayList<>();
-
         storeDataInArrays();
 
-        customAdapter = new CustomAdapter(Main_3_1_2_4a_3.this,this, book_id,book_spinner2, book_note,book_caption,book_money);
+        customAdapter = new CustomAdapter(Main_3_1_2_4a_3.this,this, book_id,book_date,book_money,book_caption,book_spinner1,book_spinner2,book_note);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Main_3_1_2_4a_3.this));
     }
@@ -78,10 +72,12 @@ public class Main_3_1_2_4a_3 extends AppCompatActivity {
         }else{
             while (cursor.moveToNext()){
                 book_id.add(cursor.getString(0));
+                book_date.add(cursor.getString(1));
+                book_money.add(cursor.getString(2));
+                book_caption.add(cursor.getString(3));
+                book_spinner1.add(cursor.getString(4));
                 book_spinner2.add(cursor.getString(5));
                 book_note.add(cursor.getString(6));
-                book_caption.add(cursor.getString(3));
-                book_money.add(cursor.getString(2));
             }
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);

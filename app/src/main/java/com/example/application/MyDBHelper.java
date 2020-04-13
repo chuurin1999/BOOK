@@ -2,7 +2,6 @@ package com.example.application;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -20,7 +19,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
     private static final String COLUMN_DATE = "日期";
     private static final String COLUMN_MONEY = "金額";
     private static final String COLUMN_CAPTION = "摘要";
-    private static final String COLUMN_SPINNER = "狀態";
+    private static final String COLUMN_SPINNER1 = "狀態";
     private static final String COLUMN_SPINNER2 = "詳細狀態";
     private static final String COLUMN_NOTE = "備註";
 
@@ -36,24 +35,24 @@ public class MyDBHelper extends SQLiteOpenHelper {
                 COLUMN_DATE + " TEXT, " +
                 COLUMN_MONEY + " INTEGER, " +
                 COLUMN_CAPTION + " TEXT, " +
-                COLUMN_SPINNER + " TEXT, " +
+                COLUMN_SPINNER1 + " TEXT, " +
                 COLUMN_SPINNER2 + " TEXT, " +
                 COLUMN_NOTE + " TEXT);";
         db.execSQL(query);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
-    void addBook(String date,int money,String caption,String spinner,String spinner2,String note){
+    void addBook(String date,int money,String caption,String spinner1,String spinner2,String note){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_DATE, date);
         cv.put(COLUMN_MONEY, money);
         cv.put(COLUMN_CAPTION, caption);
-        cv.put(COLUMN_SPINNER, spinner);
+        cv.put(COLUMN_SPINNER1, spinner1);
         cv.put(COLUMN_SPINNER2, spinner2);
         cv.put(COLUMN_NOTE, note);
         long result = db.insert(TABLE_NAME,null, cv);
@@ -73,13 +72,13 @@ public class MyDBHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
-    void updateData(String row_id, String date,String money,String caption,String spinner,String spinner2,String note){
+    void updateData(String row_id,String date,String money,String caption,String spinner1,String spinner2,String note){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_DATE, date);
         cv.put(COLUMN_MONEY, money);
         cv.put(COLUMN_CAPTION, caption);
-        cv.put(COLUMN_SPINNER, spinner);
+        cv.put(COLUMN_SPINNER1, spinner1);
         cv.put(COLUMN_SPINNER2, spinner2);
         cv.put(COLUMN_NOTE, note);
 
