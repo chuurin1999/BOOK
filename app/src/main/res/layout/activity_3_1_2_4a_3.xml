@@ -26,7 +26,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="40dp"
-        android:text="日曆日期\nYEAR\nMONTH\nDAY"
+        android:text="日曆日期\nYEAR\nMONTH\nDAY\n_3_1_2_4a_3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_txt" />
 
@@ -66,14 +66,16 @@
         android:id="@+id/add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="312dp"
+        android:layout_marginRight="312dp"
+        android:layout_marginBottom="400dp"
         android:clickable="true"
         android:focusable="true"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add"
+        app:rippleColor="#00FFFFFF"
+        app:srcCompat="@drawable/arrows"
         tools:ignore="VectorDrawableCompat" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -85,7 +87,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/date_view"
         app:layout_constraintTop_toBottomOf="@+id/title_txt"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.958" />
 
     <ImageView
         android:id="@+id/empty_imageview"

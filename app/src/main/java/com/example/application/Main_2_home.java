@@ -62,7 +62,7 @@ public class Main_2_home extends Fragment {
         public void onClick(View v) {
             MyDBHelper myDB = new MyDBHelper(getActivity());
             myDB.addBook(
-                    date_input.getText().toString().trim(),
+                    date_input.getText().toString().trim(),//.trim()去掉字串兩端之空白
                     Integer.valueOf(money_input.getText().toString().trim()),
                     caption_input.getText().toString().trim(),
                     spinner1_input.getSelectedItem().toString().trim(),

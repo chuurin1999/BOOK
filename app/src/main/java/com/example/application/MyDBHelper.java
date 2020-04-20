@@ -2,12 +2,17 @@ package com.example.application;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.NumberFormat;
 
 public class MyDBHelper extends SQLiteOpenHelper {
     private Context context;
@@ -32,7 +37,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME +" (" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_DATE + " TEXT, " +
+                COLUMN_DATE + " DATE, " +
                 COLUMN_MONEY + " INTEGER, " +
                 COLUMN_CAPTION + " TEXT, " +
                 COLUMN_SPINNER1 + " TEXT, " +
@@ -103,4 +108,22 @@ public class MyDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
     }
+
+
+    Cursor queryData(){
+//        Bundle bundle = getIntent().getExtras();
+//        String startDate = bundle.getString("startDate");
+//        String endDate = bundle.getString("endtDate");
+//        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between "+startDate+" AND "+endDate;
+        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between '2020-4-11' AND '2020-4-30'";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+
 }
