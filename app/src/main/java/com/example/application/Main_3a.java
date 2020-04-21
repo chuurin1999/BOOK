@@ -110,7 +110,7 @@ public class Main_3a extends AppCompatActivity {
 //        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between '2020-4-11' AND '2020-4-30'";
 
 //                "SELECT * FROM " + TABLE_NAME + " WHERE COLUMN_DATE between '" +startDate + "' and '" + endDate +"' ORDER BY COLUMN_DATE";
-//        SQLiteDatabase db = myDB.getWritableDatabase();
+
         SQLiteDatabase db = myDB.getReadableDatabase();
 
         Cursor cursor = null;

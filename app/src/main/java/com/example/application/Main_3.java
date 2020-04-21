@@ -44,7 +44,7 @@ public class Main_3 extends AppCompatActivity {
             myBundle.putString("endtDate",endtDate);
             Log.d("startDate",startDate);
             myIntent.putExtras(myBundle);
-            startActivity(myIntent);//启动
+            startActivity(myIntent);
         }
     };
     public void btnChoseStartDate(View v)
