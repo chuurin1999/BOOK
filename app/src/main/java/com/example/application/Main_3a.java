@@ -78,6 +78,7 @@ public class Main_3a extends AppCompatActivity {
         }
     }
 
+
     void storeDataInArrays(){
         Cursor cursor = this.queryData();
         if(cursor.getCount() == 0){
