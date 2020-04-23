@@ -7,45 +7,42 @@
     tools:context=".Main_3"
     android:theme="@style/at3">
 
-<!--    <Button-->
-<!--        android:id="@+id/button9"-->
-<!--        android:layout_width="279dp"-->
-<!--        android:layout_height="52dp"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginLeft="16dp"-->
-<!--        android:layout_marginTop="36dp"-->
-<!--        android:background="#DDDDDD"-->
-<!--        android:drawableRight="@drawable/calendar"-->
-<!--        android:hint="點選日期"-->
-<!--        android:onClick="showDatePickerDialog"-->
-<!--        android:text=""-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView4"-->
-<!--        app:srcCompat="@drawable/calendar" />-->
 
-<!--    <Button-->
-<!--        android:id="@+id/button5"-->
-<!--        android:layout_width="73dp"-->
-<!--        android:layout_height="36dp"-->
-<!--        android:layout_marginStart="28dp"-->
-<!--        android:layout_marginLeft="28dp"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:background="#D87093"-->
-<!--        android:text="查詢"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/button9"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/button9" />-->
+    <Button
+        android:id="@+id/OneDate_button"
+        android:layout_width="279dp"
+        android:layout_height="52dp"
+        android:background="#FFE4E1"
+        android:drawableRight="@drawable/calendar"
+        android:hint="點選日期"
+        android:onClick="btnChoseOneDate"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/calendar" />
 
+    <Button
+        android:id="@+id/query1_button"
+        android:layout_width="73dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:background="#D87093"
+        android:text="查詢"
+        app:layout_constraintStart_toEndOf="@+id/OneDate_button"
+        app:layout_constraintTop_toTopOf="@+id/OneDate_button" />
 
-    <!--    <TextView-->
-<!--        android:id="@+id/textView4"-->
-<!--        android:layout_width="72dp"-->
-<!--        android:layout_height="25dp"-->
-<!--        android:layout_marginTop="64dp"-->
-<!--        android:text="日報表"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/button9"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="72dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="64dp"
+        android:text="日報表"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/start_button"
@@ -58,19 +55,26 @@
         app:layout_constraintStart_toStartOf="@+id/start_title"
         app:layout_constraintTop_toBottomOf="@+id/start_title" />
 
+    <TextView
+        android:id="@+id/start_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="22dp"
+        android:text="起日"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
     <Button
         android:id="@+id/end_button"
         android:layout_width="134dp"
         android:layout_height="50dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
         android:background="#FFE4E1"
         android:drawableRight="@drawable/calendar"
         android:hint="點選日期"
         android:onClick="btnChoseEndDate"
         android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/end_title"
         app:layout_constraintTop_toBottomOf="@+id/end_title" />
 
@@ -78,43 +82,29 @@
         android:id="@+id/end_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
         android:text="迄日"
-        app:layout_constraintStart_toStartOf="@+id/start_title"
-        app:layout_constraintTop_toBottomOf="@+id/start_button" />
+        app:layout_constraintStart_toEndOf="@+id/start_title"
+        app:layout_constraintTop_toTopOf="@+id/start_title" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="85dp"
         android:layout_height="30dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="108dp"
         android:text="期間報表"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/OneDate_button" />
 
     <Button
         android:id="@+id/query_button"
         android:layout_width="71dp"
         android:layout_height="37dp"
-        android:layout_marginStart="157dp"
-        android:layout_marginLeft="157dp"
-        android:layout_marginBottom="119dp"
+        android:layout_marginTop="200dp"
         android:background="#D87093"
         android:text="查詢"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/start_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginLeft="113dp"
-        android:layout_marginTop="58dp"
-        android:text="起日"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintEnd_toEndOf="@+id/query1_button"
+        app:layout_constraintTop_toBottomOf="@+id/query1_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
