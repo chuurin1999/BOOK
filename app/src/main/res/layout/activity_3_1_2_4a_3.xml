@@ -26,7 +26,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="40dp"
-        android:text="日曆日期\nYEAR\nMONTH\nDAY\n_3_1_2_4a_3"
+        android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_txt" />
 

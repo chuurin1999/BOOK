@@ -68,26 +68,4 @@ public class Main_3 extends AppCompatActivity {
         newFragment.setArguments(bData);
         newFragment.show(getSupportFragmentManager(), "日期挑選器");
     }
-//    Cursor queryData(){
-//        String query = "SELECT * FROM " + TABLE_NAME+" WHERE 日期 between'"+StartDate+"'and'"+EndDate+"' ORDER BY 日期 ";
-//        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//
-//        Cursor cursor = null;
-//        if(db != null){
-//            cursor = db.rawQuery(query, null);
-//        }
-//        return cursor;
-//    }
-
-//    Cursor queryData(){
-//        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between "+StartDate+" AND "+EndDate;
-//        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//
-//        Cursor cursor = null;
-//        if(db != null){
-//            cursor = db.rawQuery(query, null);
-//        }
-//        return cursor;
-//    }
-
 }

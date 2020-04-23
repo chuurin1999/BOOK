@@ -3,6 +3,7 @@ package com.example.application;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,6 +11,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,10 +24,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class Main_3_1_2_4a_3 extends AppCompatActivity {
+    static final String TABLE_NAME = "library";        // 資料表名稱
+    private static final String COLUMN_DATE = "日期";
     RecyclerView recyclerView;
     FloatingActionButton add_button;
     ImageView empty_imageview;
-    TextView no_data;
+    TextView no_data,date_view;
     MyDBHelper myDB;
     ArrayList<String> book_id, book_date, book_money, book_caption,book_spinner1,book_spinner2, book_note;
     CustomAdapter customAdapter;
@@ -32,6 +37,7 @@ public class Main_3_1_2_4a_3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3_1_2_4a_3);
         recyclerView = findViewById(R.id.recyclerView);
+        date_view=findViewById(R.id.date_view);
         add_button = findViewById(R.id.add_button);
         empty_imageview = findViewById(R.id.empty_imageview);
         no_data = findViewById(R.id.no_data);
@@ -65,7 +71,7 @@ public class Main_3_1_2_4a_3 extends AppCompatActivity {
     }
 
     void storeDataInArrays(){
-        Cursor cursor = myDB.readAllData();
+        Cursor cursor = this.queryData();
         if(cursor.getCount() == 0){
             empty_imageview.setVisibility(View.VISIBLE);
             no_data.setVisibility(View.VISIBLE);
@@ -82,6 +88,20 @@ public class Main_3_1_2_4a_3 extends AppCompatActivity {
             empty_imageview.setVisibility(View.GONE);
             no_data.setVisibility(View.GONE);
         }
+    }
+    Cursor queryData(){
+        Intent myIntent=getIntent();
+        Bundle bundle = myIntent.getExtras();
+        String OneDay = bundle.getString("OneDay");
+        String date=OneDay;
+        date_view.setText(date);
+        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " = '"+OneDay+"'";
+        SQLiteDatabase db = myDB.getReadableDatabase();
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
     }
 
     @Override

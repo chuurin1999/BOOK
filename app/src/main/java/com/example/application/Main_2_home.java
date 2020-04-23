@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +62,9 @@ public class Main_2_home extends Fragment {
         @Override
         public void onClick(View v) {
             MyDBHelper myDB = new MyDBHelper(getActivity());
+            String OneDay = date_input.getText().toString();
+//            Intent myIntent = new Intent(getActivity(), Main_3a.class);
+
             myDB.addBook(
                     date_input.getText().toString().trim(),//.trim()去掉字串兩端之空白
                     Integer.valueOf(money_input.getText().toString().trim()),
@@ -69,6 +73,9 @@ public class Main_2_home extends Fragment {
                     spinner2_input.getSelectedItem().toString().trim(),
                     note_input.getText().toString().trim());
             Intent myIntent = new Intent(getActivity(), Main_3_1_2_4a_3.class);
+            Bundle myBundle = new Bundle();
+            myBundle.putString("OneDay",OneDay);
+            myIntent.putExtras(myBundle);
             startActivity(myIntent);//启动
         }
     };

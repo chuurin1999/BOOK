@@ -29,7 +29,7 @@ public class Main_3a extends AppCompatActivity {
     static final String TABLE_NAME = "library";        // 資料表名稱
     private static final String COLUMN_DATE = "日期";
     RecyclerView recyclerView;
-    FloatingActionButton add_button;
+//    FloatingActionButton add_button;
     ImageView empty_imageview;
     TextView no_data,textView7;
     MyDBHelper myDB;
@@ -41,21 +41,19 @@ public class Main_3a extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3a);
         textView7=(TextView)findViewById(R.id.textView7);
-//       //取得database物件
-//        SQLiteDatabase db = myDB.getWritableDatabase();
         recyclerView = findViewById(R.id.recyclerView);
-        add_button = findViewById(R.id.add_button);
+//        add_button = findViewById(R.id.add_button);
         empty_imageview = findViewById(R.id.empty_imageview);
         no_data = findViewById(R.id.no_data);
-        add_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Main_3a.this, Main_3a.class);
-                startActivity(intent);
-
-
-            }
-        });
+//        add_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Main_3a.this, Main_2_home.class);
+//                startActivity(intent);
+//
+//
+//            }
+//        });
 
         myDB = new MyDBHelper(Main_3a.this);
         book_id = new ArrayList<>();
@@ -105,13 +103,9 @@ public class Main_3a extends AppCompatActivity {
         String endDate = bundle.getString("endtDate");
         String date=startDate+"\n"+endDate;
         textView7.setText(date);
-
         String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between '"+startDate+"' AND '"+endDate+"'";
         Log.d("startDate",query);
 //        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between '2020-4-11' AND '2020-4-30'";
-
-//                "SELECT * FROM " + TABLE_NAME + " WHERE COLUMN_DATE between '" +startDate + "' and '" + endDate +"' ORDER BY COLUMN_DATE";
-
         SQLiteDatabase db = myDB.getReadableDatabase();
 
         Cursor cursor = null;
