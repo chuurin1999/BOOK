@@ -11,7 +11,7 @@
         android:layout_width="414dp"
         android:layout_height="29dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="                                      日報表"
+        android:text="                                     期間報表"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,40 +23,41 @@
         android:id="@+id/count_view"
         android:layout_width="143dp"
         android:layout_height="24dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginRight="104dp"
         android:text="累計餘負 : 15000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chart_view" />
 
     <TextView
         android:id="@+id/day_view"
-        android:layout_width="182dp"
-        android:layout_height="40dp"
+        android:layout_width="183dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
         android:text="本日結算 : 29265"
-        app:layout_constraintStart_toEndOf="@+id/count_view"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/count_view" />
 
     <Button
         android:id="@+id/chart_view"
         android:layout_width="54dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/graph"
-        app:layout_constraintBottom_toBottomOf="@+id/day_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/count_view"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="411dp"
-        android:layout_height="463dp"
+        android:layout_width="406dp"
+        android:layout_height="542dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/day_view" />
+        app:layout_constraintTop_toBottomOf="@+id/day_view"
+        app:layout_constraintVertical_bias="0.988" />
 
     <ImageView
         android:id="@+id/empty_imageview"
@@ -86,15 +87,15 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+        android:layout_width="315dp"
         android:layout_height="54dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
         android:layout_marginTop="12dp"
         android:text=""
         android:textColor="#4D5A9F"
         android:textSize="25sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_txt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
