@@ -93,7 +93,7 @@ public class Main_3_1_2_4a_3 extends AppCompatActivity {
         Intent myIntent=getIntent();
         Bundle bundle = myIntent.getExtras();
         String OneDay = bundle.getString("OneDay");
-        String date=OneDay;
+        String date="\uD83D\uDDD3"+" "+OneDay;
         date_view.setText(date);
         String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " = '"+OneDay+"'";
         SQLiteDatabase db = myDB.getReadableDatabase();

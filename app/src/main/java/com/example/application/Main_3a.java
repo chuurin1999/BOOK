@@ -101,7 +101,7 @@ public class Main_3a extends AppCompatActivity {
         Bundle bundle = myIntent.getExtras();
         String startDate = bundle.getString("startDate");
         String endDate = bundle.getString("endtDate");
-        String date=startDate+"\n"+endDate;
+        String date="\uD83D\uDDD3"+" "+startDate+"~"+endDate;
         textView7.setText(date);
         String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between '"+startDate+"' AND '"+endDate+"'";
         Log.d("startDate",query);

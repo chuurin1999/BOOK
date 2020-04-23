@@ -21,12 +21,15 @@
 
     <TextView
         android:id="@+id/date_view"
-        android:layout_width="87dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="152dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
         android:text=""
+        android:textColor="#4D5A9F"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_txt" />
 
@@ -34,16 +37,16 @@
         android:id="@+id/count_view"
         android:layout_width="143dp"
         android:layout_height="24dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:text="累計餘負 : 15000"
         app:layout_constraintStart_toEndOf="@+id/date_view"
         app:layout_constraintTop_toTopOf="@+id/date_view" />
 
     <TextView
         android:id="@+id/day_view"
-        android:layout_width="182dp"
-        android:layout_height="40dp"
+        android:layout_width="131dp"
+        android:layout_height="23dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:text="本日結算 : 29265"
@@ -66,28 +69,26 @@
         android:id="@+id/add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="312dp"
-        android:layout_marginRight="312dp"
-        android:layout_marginBottom="400dp"
+        android:layout_marginTop="32dp"
         android:clickable="true"
         android:focusable="true"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/date_view"
+        app:layout_constraintTop_toBottomOf="@+id/date_view"
         app:rippleColor="#00FFFFFF"
         app:srcCompat="@drawable/arrows"
         tools:ignore="VectorDrawableCompat" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="289dp"
-        android:layout_height="453dp"
+        android:layout_width="337dp"
+        android:layout_height="617dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/date_view"
-        app:layout_constraintTop_toBottomOf="@+id/title_txt"
-        app:layout_constraintVertical_bias="0.958" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/add_button"
+        app:layout_constraintTop_toTopOf="@+id/add_button"
+        app:layout_constraintVertical_bias="0.658" />
 
     <ImageView
         android:id="@+id/empty_imageview"
