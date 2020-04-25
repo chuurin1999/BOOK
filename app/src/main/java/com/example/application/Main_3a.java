@@ -28,14 +28,14 @@ import java.util.ArrayList;
 public class Main_3a extends AppCompatActivity {
     RecyclerView recyclerView;
     ImageView empty_imageview;
-    TextView no_data,textView7,day_view;
+    TextView no_data,date_view,day_view;
     MyDBHelper myDB;
     ArrayList<String> book_id, book_date, book_money, book_caption,book_spinner1,book_spinner2, book_note;
     CustomAdapter customAdapter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3a);
-        textView7=(TextView)findViewById(R.id.textView7);
+        date_view=(TextView)findViewById(R.id.date_view);
         recyclerView = findViewById(R.id.recyclerView);
         day_view = findViewById(R.id.day_view);
         empty_imageview = findViewById(R.id.empty_imageview);
@@ -86,7 +86,7 @@ public class Main_3a extends AppCompatActivity {
         String startDate = bundle.getString("startDate");
         String endDate = bundle.getString("endtDate");
         String date="\uD83D\uDDD3"+" "+startDate+"~"+endDate;
-        textView7.setText(date);
+        date_view.setText(date);
         String query = "SELECT * FROM library WHERE 日期 between '"+startDate+"' AND '"+endDate+"'";
         Log.d("startDate",query);
         SQLiteDatabase db = myDB.getReadableDatabase();

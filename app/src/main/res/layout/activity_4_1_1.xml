@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/bank_number"
         android:layout_width="334dp"
         android:layout_height="63dp"
         android:layout_marginTop="92dp"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/type3" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/netbank_number"
         android:layout_width="334dp"
         android:layout_height="63dp"
         android:layout_marginTop="28dp"
@@ -41,12 +41,12 @@
         android:hint="輸入網銀帳號"
         android:inputType="textPassword"
         android:theme="@style/at4"
-        app:layout_constraintEnd_toEndOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintEnd_toEndOf="@+id/bank_number"
+        app:layout_constraintStart_toStartOf="@+id/bank_number"
+        app:layout_constraintTop_toBottomOf="@+id/bank_number" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/netbank_password"
         android:layout_width="334dp"
         android:layout_height="63dp"
         android:layout_marginTop="28dp"
@@ -54,22 +54,22 @@
         android:inputType="textPassword"
         android:hint="輸入網銀密碼"
         android:theme="@style/at4"
-        app:layout_constraintEnd_toEndOf="@+id/editText5"
-        app:layout_constraintStart_toStartOf="@+id/editText5"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintEnd_toEndOf="@+id/netbank_number"
+        app:layout_constraintStart_toStartOf="@+id/netbank_number"
+        app:layout_constraintTop_toBottomOf="@+id/netbank_number" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/authorize"
         android:layout_width="334dp"
         android:layout_height="60dp"
         android:layout_marginTop="28dp"
         android:background="	#003377"
         android:text="連線授權"
         android:textColor="#DDDDDD"
-
-        app:layout_constraintEnd_toEndOf="@+id/editText6"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/netbank_password"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editText6"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintStart_toStartOf="@+id/netbank_password"
+        app:layout_constraintTop_toBottomOf="@+id/netbank_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

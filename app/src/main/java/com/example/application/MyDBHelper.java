@@ -108,22 +108,4 @@ public class MyDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
     }
-
-
-    Cursor queryData(){
-//        Bundle bundle = getIntent().getExtras();
-//        String startDate = bundle.getString("startDate");
-//        String endDate = bundle.getString("endtDate");
-//        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between "+startDate+" AND "+endDate;
-        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between '2020-4-11' AND '2020-4-30'";
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor cursor = null;
-        if(db != null){
-            cursor = db.rawQuery(query, null);
-        }
-        return cursor;
-    }
-
-
 }

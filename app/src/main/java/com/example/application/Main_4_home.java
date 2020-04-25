@@ -11,16 +11,16 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Main_4_home extends Fragment {
-    FloatingActionButton add_button2;
+    FloatingActionButton bankAdd_fab;
     public Main_4_home(){}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.activity_4_home,container,false);
-        add_button2 = view.findViewById(R.id.add_button2);
-        add_button2.setOnClickListener(add_button_onClick);
+        bankAdd_fab = view.findViewById(R.id.bankAdd_fab);
+        bankAdd_fab.setOnClickListener(bankAdd_fab_onClick);
         return view;
     }
-    private final View.OnClickListener add_button_onClick = new View.OnClickListener(){
+    private final View.OnClickListener bankAdd_fab_onClick = new View.OnClickListener(){
         @Override
         public void onClick(View v) {
             Intent myIntent = new Intent(getActivity(), Main_4_1_1.class);
