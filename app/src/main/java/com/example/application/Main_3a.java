@@ -26,15 +26,10 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class Main_3a extends AppCompatActivity {
-    static final String TABLE_NAME = "library";        // 資料表名稱
-    private static final String COLUMN_DATE = "日期";
     RecyclerView recyclerView;
-//    FloatingActionButton add_button;
     ImageView empty_imageview;
-    TextView no_data,textView7;
+    TextView no_data,textView7,day_view;
     MyDBHelper myDB;
-
-//    Main_3 mb;
     ArrayList<String> book_id, book_date, book_money, book_caption,book_spinner1,book_spinner2, book_note;
     CustomAdapter customAdapter;
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +37,10 @@ public class Main_3a extends AppCompatActivity {
         setContentView(R.layout.activity_3a);
         textView7=(TextView)findViewById(R.id.textView7);
         recyclerView = findViewById(R.id.recyclerView);
-//        add_button = findViewById(R.id.add_button);
+        day_view = findViewById(R.id.day_view);
         empty_imageview = findViewById(R.id.empty_imageview);
         no_data = findViewById(R.id.no_data);
-//        add_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Main_3a.this, Main_2_home.class);
-//                startActivity(intent);
-//
-//
-//            }
-//        });
+
 
         myDB = new MyDBHelper(Main_3a.this);
         book_id = new ArrayList<>();
@@ -64,7 +51,7 @@ public class Main_3a extends AppCompatActivity {
         book_spinner2 = new ArrayList<>();
         book_note = new ArrayList<>();
         storeDataInArrays();
-
+        querySettlement();
         customAdapter = new CustomAdapter(Main_3a.this,this, book_id,book_date,book_money,book_caption,book_spinner1,book_spinner2,book_note);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Main_3a.this));
@@ -103,16 +90,51 @@ public class Main_3a extends AppCompatActivity {
         String endDate = bundle.getString("endtDate");
         String date="\uD83D\uDDD3"+" "+startDate+"~"+endDate;
         textView7.setText(date);
-        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between '"+startDate+"' AND '"+endDate+"'";
+        String query = "SELECT * FROM library WHERE 日期 between '"+startDate+"' AND '"+endDate+"'";
         Log.d("startDate",query);
-//        String query = "SELECT * FROM " + TABLE_NAME+" WHERE " + COLUMN_DATE+ " between '2020-4-11' AND '2020-4-30'";
         SQLiteDatabase db = myDB.getReadableDatabase();
-
         Cursor cursor = null;
         if(db != null){
             cursor = db.rawQuery(query, null);
         }
         return cursor;
+    }
+
+    //    本期結算
+    void querySettlement() {
+        int num=0;
+        String string="";
+        Intent myIntent=getIntent();
+        Bundle bundle = myIntent.getExtras();
+        String startDate = bundle.getString("startDate");
+        String endDate = bundle.getString("endtDate");
+        String income = "SELECT * FROM library WHERE (日期 between '"+startDate+"' AND '"+endDate+"')AND (狀態 = '收入' )";
+        String expense ="SELECT * FROM library WHERE (日期 between '"+startDate+"' AND '"+endDate+"')AND (狀態 = '支出' )";
+        Log.d("query1",income);
+        SQLiteDatabase db = myDB.getReadableDatabase();
+        Cursor cursor = null;
+        Cursor cursor1 = null;
+        if (db != null) {
+            cursor = db.rawQuery(income, null);
+            cursor1 = db.rawQuery(expense, null);
+        }
+        if (cursor.getCount() == 0) {
+            day_view.setText("本期結算:0");
+        } else {
+            while (cursor.moveToNext()) {
+                num+=(cursor.getInt(2));
+            }
+        }
+        if (cursor1.getCount() == 0) {
+            day_view.setText("本期結算:0");
+        } else {
+            while (cursor1.moveToNext()) {
+                num-=(cursor1.getInt(2));
+            }
+            string+="本期結算 "+num;
+            Log.d("string",string);
+            day_view.setText(string);
+        }
     }
 
     @Override

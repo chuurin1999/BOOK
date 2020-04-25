@@ -21,29 +21,27 @@
 
     <TextView
         android:id="@+id/count_view"
-        android:layout_width="143dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
-        android:text="累計餘負 : 15000"
+        android:layout_width="272dp"
+        android:layout_height="25dp"
+        android:text="累計餘負"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/chart_view" />
 
     <TextView
         android:id="@+id/day_view"
-        android:layout_width="183dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
-        android:text="本日結算 : 29265"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/count_view" />
+        android:layout_width="272dp"
+        android:layout_height="32dp"
+        android:text="本日結算"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/chart_view"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/chart_view"
-        android:layout_width="54dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="62dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/graph"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -51,13 +49,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="406dp"
-        android:layout_height="542dp"
+        android:layout_height="483dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/day_view"
-        app:layout_constraintVertical_bias="0.988" />
+        app:layout_constraintTop_toBottomOf="@+id/day_view" />
 
     <ImageView
         android:id="@+id/empty_imageview"
