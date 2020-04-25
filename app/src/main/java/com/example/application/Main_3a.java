@@ -40,8 +40,6 @@ public class Main_3a extends AppCompatActivity {
         day_view = findViewById(R.id.day_view);
         empty_imageview = findViewById(R.id.empty_imageview);
         no_data = findViewById(R.id.no_data);
-
-
         myDB = new MyDBHelper(Main_3a.this);
         book_id = new ArrayList<>();
         book_date = new ArrayList<>();
@@ -62,7 +60,6 @@ public class Main_3a extends AppCompatActivity {
             recreate();
         }
     }
-
 
     void storeDataInArrays(){
         Cursor cursor = this.queryData();
@@ -131,10 +128,10 @@ public class Main_3a extends AppCompatActivity {
             while (cursor1.moveToNext()) {
                 num-=(cursor1.getInt(2));
             }
-            string+="本期結算 "+num;
-            Log.d("string",string);
-            day_view.setText(string);
         }
+        string+="本期結算 "+num;
+        Log.d("string",string);
+        day_view.setText(string);
     }
 
     @Override
@@ -170,12 +167,8 @@ public class Main_3a extends AppCompatActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
             }
         });
         builder.create().show();
     }
-
 }
-
-
