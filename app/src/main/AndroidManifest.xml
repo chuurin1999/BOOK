@@ -10,23 +10,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/at1">
-        <activity android:name=".Main_3a"></activity>
         <activity
             android:name=".Main_5"
             android:label="@string/app_a5"
+            android:parentActivityName=".Main_1"
             android:theme="@style/at5" />
-        <activity android:name=".Main_3_1_2_4a_3" />
         <activity
             android:name=".Main_4"
             android:label="@string/app_a4"
+            android:parentActivityName=".Main_1"
             android:theme="@style/at4" />
         <activity
             android:name=".Main_4_1_1"
             android:label="@string/app_a4_1_1"
+            android:parentActivityName=".Main_1"
             android:theme="@style/at4"/>
         <activity
             android:name=".Main_3"
             android:label="@string/app_a3"
+            android:parentActivityName=".Main_1"
+            android:theme="@style/at3" />
+        <activity
+            android:name=".Main_3_1_2_4a_3"
+            android:label="@string/app_a3"
+            android:parentActivityName=".Main_1"
+            android:theme="@style/at3" />
+        <activity
+            android:name=".Main_3a"
+            android:label="@string/app_a3"
+            android:parentActivityName=".Main_1"
             android:theme="@style/at3" />
         <activity android:name=".Main_0">
             <intent-filter>
@@ -39,7 +51,7 @@
         <activity
             android:name=".Main_2"
             android:label="@string/app_a2"
-            android:parentActivityName=".Main_3_1_2_4a_3"
+            android:parentActivityName=".Main_1"
             android:theme="@style/at2" />
         <activity
             android:name=".UpdateActivity"
