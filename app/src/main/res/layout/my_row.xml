@@ -31,10 +31,10 @@
 
             <TextView
                 android:id="@+id/money_title_txt"
-                android:layout_width="52dp"
-                android:layout_height="26dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginLeft="32dp"
+                android:layout_width="78dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:text="金額"
                 android:textColor="#7C8AD3"
                 android:textSize="18sp"

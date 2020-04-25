@@ -134,7 +134,7 @@ public class Main_3_1_2_4a_3 extends AppCompatActivity {
             while (cursor1.moveToNext()) {
                 num-=(cursor1.getInt(2));
             }
-            string+="本日結算 : "+num;
+            string+="本日結算 "+num;
             Log.d("string",string);
             day_view.setText(string);
         }
