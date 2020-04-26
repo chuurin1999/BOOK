@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -21,6 +22,9 @@ public class Main_2 extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         NavController navController = Navigation.findNavController(this,R.id.nav_host_fragment_2);
+
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(R.id.main_2_home,R.id.main_2_dash).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
 

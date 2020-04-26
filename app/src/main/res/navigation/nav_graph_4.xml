@@ -8,11 +8,11 @@
     <fragment
         android:id="@+id/main_4_home"
         android:name="com.example.application.Main_4_home"
-        android:label="activity_4_home"
+        android:label="@string/app_a4"
         tools:layout="@layout/activity_4_home" />
     <fragment
         android:id="@+id/main_4_dash"
         android:name="com.example.application.Main_4_dash"
-        android:label="activity_4_dash"
+        android:label="@string/app_b4"
         tools:layout="@layout/activity_4_dash" />
 </navigation>
