@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="理財建議"
+
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:gravity="center"/>
 

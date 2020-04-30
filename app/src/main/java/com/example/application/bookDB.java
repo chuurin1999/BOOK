@@ -10,5 +10,6 @@ public class bookDB extends Application {
         // 啟動Stetho
         Stetho.initializeWithDefaults(this);
 
+
     }
 }
