@@ -13,6 +13,6 @@ public class Main_5_home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.activity_5_home, container, false);
         return view;
-        //try gitpuigiu刪掉這一行ny
+        //try gitpuigiu刪掉這一行nyk
     }
 }
